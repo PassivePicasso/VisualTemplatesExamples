@@ -4,7 +4,7 @@
       <ui:Label text="Entity Models"/>
 
       <ui:VisualElement name="entity-models-control">
-        <VisualTemplates.ItemsControl binding-path="EntityModels" name="entity-model-items-control" config-method="ConfigurerEntityModelElement" />
+        <VisualTemplates.ItemsControl binding-path="EntityModels" name="entity-model-items-control" config-method="ConfigurerEntityModelItemsControl" />
         <ui:Button name="archetype-add-model" text="Add Entity Model"/>
       </ui:VisualElement>
     </ui:VisualElement>

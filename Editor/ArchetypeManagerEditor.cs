@@ -8,6 +8,10 @@ using VisualTemplates;
 [CustomEditor(typeof(ArchetypeManager))]
 public class ArchetypeManagerEditor : Editor
 {
+    /// <summary>
+    /// This is how we setup how we want to access uxml files, I decided to use Resources, but you could probably replace this with AssetReferences or use the AssetDatabase.
+    /// The premise has been on using types to define templates, and idea taken from WPF's DataTemplates.
+    /// </summary>
     static ArchetypeManagerEditor()
     {
         VisualTemplateSettings.TemplateLoader = typeName =>
@@ -17,22 +21,32 @@ public class ArchetypeManagerEditor : Editor
         };
     }
 
+    /// <summary>
+    /// The only standard Unity call, here we are just going to create an AutoTemplate, which is the base for the entire system.
+    /// It should be assumed that all controls in VisualTemplates require that AutoTemplate is an ancestor in the VisualTree
+    /// </summary>
     public override VisualElement CreateInspectorGUI()
     {
         AutoTemplate template = new AutoTemplate(this, typeof(ArchetypeManager));
 
         var entityModelsItemsControl = template.Q<ItemsControl>("entity-model-items-control");
+        
+        //adding a way to add elements to an the EntityModel items control, we use a button to add a new element.
+        
         var addModelButton = template.Q<Button>("archetype-add-model");
-
+        //pass a method into AddItem to override default unity array behavior and set values to your custom defaults.
         addModelButton.clickable = new Clickable(() => entityModelsItemsControl.AddItem(new EntityModel(), NewEntityData));
 
         return template;
     }
 
-    void AssignData<T>(SerializedProperty sp, T d) => sp.managedReferenceValue = d;
 
-    ///For creating a new element in the array and populating the data specifically rather than duplicating the previous element.
-    ///Leave this empty if you don't want to override the default behaviour of arrays.
+
+    /// <summary>
+    /// We have to assign data when we call ItemsControl.AddItem, we do this by passing in a method with this signature.
+    /// In this case we don't need to assign any data as we are just increasing the number of elements in an array for a struct.
+    /// With Unity this copies the previous element automatically, however I wanted to clear out all the data when adding this item however
+    /// </summary>
     void NewEntityData(SerializedProperty sp, EntityModel d)
     {
         var name = sp.FindPropertyRelative(nameof(EntityModel.Name));
@@ -45,11 +59,20 @@ public class ArchetypeManagerEditor : Editor
         sp.serializedObject.ApplyModifiedProperties();
     }
 
+    /// <summary>
+    /// This determines how data is pushed into a serialized property for an items control.  this is being passed to ItemsControl.AddItem
+    /// We are saving [SerializedReference] values for the EntityModel.ComponentData and EntityModel.SharedComponentData fields.
+    /// Because of this we need to override the default value saving behavior to saved the object into the managedReferenceValue field of the SerializedProperty
+    /// </summary>
+    void AssignData<T>(SerializedProperty sp, T d) => sp.managedReferenceValue = d;
+
+    /// <summary>
     ///This is being used to setup the suggest box to populate different parts of the EntityModel when you select a result
-    public void ConfigurerEntityModelElement(VisualElement element)
+    ///This is being called from \Editor\Resources\Templates\ArchetypeManager.uxml using the ItemsControl config-method attribute.
+    ///Setting up this configuration callback isn't required for using ItemsControl as you can see when you start drilling down in the UXML template files under Editor\Resources
+    /// </summary>
+    public void ConfigurerEntityModelItemsControl(VisualElement element)
     {
-        var sharedSystemStateDataComponentsItemsControl = element.Q<ItemsControl>("shared-system-data-components-items-control");
-        var systemStateDataComponentsItemsControl = element.Q<ItemsControl>("system-data-components-items-control");
         var sharedDataComponentsItemsControl = element.Q<ItemsControl>("shared-data-components-items-control");
         var dataComponentsItemsControl = element.Q<ItemsControl>("data-components-items-control");
 
@@ -63,12 +86,6 @@ public class ArchetypeManagerEditor : Editor
                 var instance = Activator.CreateInstance(dataType);
                 switch (instance)
                 {
-                    case ISystemStateSharedComponentData cdi:
-                        sharedSystemStateDataComponentsItemsControl.AddItem(cdi, AssignData);
-                        break;
-                    case ISystemStateComponentData cdi:
-                        systemStateDataComponentsItemsControl.AddItem(cdi, AssignData);
-                        break;
                     case ISharedComponentData cdi:
                         sharedDataComponentsItemsControl.AddItem(cdi, AssignData);
                         break;
