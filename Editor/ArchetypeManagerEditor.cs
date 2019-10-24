@@ -31,6 +31,8 @@ public class ArchetypeManagerEditor : Editor
 
     void AssignData<T>(SerializedProperty sp, T d) => sp.managedReferenceValue = d;
 
+    ///For creating a new element in the array and populating the data specifically rather than duplicating the previous element.
+    ///Leave this empty if you don't want to override the default behaviour of arrays.
     void NewEntityData(SerializedProperty sp, EntityModel d)
     {
         var name = sp.FindPropertyRelative(nameof(EntityModel.Name));
@@ -43,6 +45,7 @@ public class ArchetypeManagerEditor : Editor
         sp.serializedObject.ApplyModifiedProperties();
     }
 
+    ///This is being used to setup the suggest box to populate different parts of the EntityModel when you select a result
     public void ConfigurerEntityModelElement(VisualElement element)
     {
         var sharedSystemStateDataComponentsItemsControl = element.Q<ItemsControl>("shared-system-data-components-items-control");
