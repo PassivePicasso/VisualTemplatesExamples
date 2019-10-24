@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="archetype-manager-inspector">
+      <Style src="ArchetypeManager.uss" />
+      <ui:Label text="Entity Models"/>
+
+      <ui:VisualElement name="entity-models-control">
+        <VisualTemplates.ItemsControl binding-path="EntityModels" name="entity-model-items-control" config-method="ConfigurerEntityModelElement" />
+        <ui:Button name="archetype-add-model" text="Add Entity Model"/>
+      </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
