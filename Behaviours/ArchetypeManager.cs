@@ -5,7 +5,7 @@ using System.Reflection;
 using Unity.Entities;
 using UnityEngine;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 public class ArchetypeManager : MonoBehaviour
 {
     public EntityModel[] EntityModels;

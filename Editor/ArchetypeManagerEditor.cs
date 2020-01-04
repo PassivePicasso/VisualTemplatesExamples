@@ -11,28 +11,18 @@ public class ArchetypeManagerEditor : Editor
     /// <summary>
     /// This is how we setup how we want to access uxml files, I decided to use Resources, but you could probably replace this with AssetReferences or use the AssetDatabase.
     /// The premise has been on using types to define templates, and idea taken from WPF's DataTemplates.
-    /// </summary>
-    static ArchetypeManagerEditor()
-    {
-        VisualTemplateSettings.TemplateLoader = typeName =>
-        {
-            VisualTreeAsset vta = Resources.Load<VisualTreeAsset>($@"Templates/{typeName}");
-            return vta;
-        };
-    }
 
-    /// <summary>
     /// The only standard Unity call, here we are just going to create an AutoTemplate, which is the base for the entire system.
     /// It should be assumed that all controls in VisualTemplates require that AutoTemplate is an ancestor in the VisualTree
     /// </summary>
     public override VisualElement CreateInspectorGUI()
     {
-        AutoTemplate template = new AutoTemplate(this, typeof(ArchetypeManager));
+        AutoTemplate template = new AutoTemplate(this, typeof(ArchetypeManager), templateName => Resources.Load<VisualTreeAsset>($@"Templates/{templateName}"));
 
         var entityModelsItemsControl = template.Q<ItemsControl>("entity-model-items-control");
-        
+
         //adding a way to add elements to an the EntityModel items control, we use a button to add a new element.
-        
+
         var addModelButton = template.Q<Button>("archetype-add-model");
         //pass a method into AddItem to override default unity array behavior and set values to your custom defaults.
         addModelButton.clickable = new Clickable(() => entityModelsItemsControl.AddItem(new EntityModel(), NewEntityData));

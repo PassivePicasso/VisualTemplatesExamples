@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &381891600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,12 +204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityModels:
-  - Name: New Entity
+  - Name: Wave
     ComponentData:
     - id: 0
     - id: 1
-    SharedComponentData:
     - id: 2
+    SharedComponentData:
+    - id: 3
   references:
     version: 1
     00000000:
@@ -244,6 +245,15 @@ MonoBehaviour:
             z: 0
             w: 0
     00000002:
+      type: {class: Rotation, ns: Unity.Transforms, asm: Unity.Transforms}
+      data:
+        Value:
+          value:
+            x: 0
+            y: 0
+            z: 0
+            w: 0
+    00000003:
       type: {class: RenderMesh, ns: Unity.Rendering, asm: Unity.Rendering.Hybrid}
       data:
         mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
@@ -262,12 +272,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 939083611}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &939083610
+--- !u!1 &1087726718
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,90 +284,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 939083611}
-  - component: {fileID: 939083612}
+  - component: {fileID: 1087726720}
+  - component: {fileID: 1087726719}
   m_Layer: 0
-  m_Name: WaveMonsters
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &939083611
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939083610}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 684306841}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &939083612
+--- !u!114 &1087726719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939083610}
+  m_GameObject: {fileID: 1087726718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3167981518a91ff47bc77387b1d0cd76, type: 3}
+  m_Script: {fileID: 11500000, guid: 98fe7d43af26ae341af91771540e14ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityModels:
-  - Name: New Entity
-    ComponentData:
-    - id: 0
-    - id: 1
-    SharedComponentData:
-    - id: 2
+  StartupJobs: []
+  UpdateJobs: []
   references:
     version: 1
-    00000000:
-      type: {class: Translation, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          x: 0
-          y: 0
-          z: 0
-    00000001:
-      type: {class: LocalToWorld, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          c0:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c1:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c2:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c3:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-    00000002:
-      type: {class: RenderMesh, ns: Unity.Rendering, asm: Unity.Rendering.Hybrid}
-      data:
-        mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-        material: {fileID: 2100000, guid: 4edb7609c9032dc47a7a1a8e6763c29a, type: 2}
-        subMesh: 0
-        layer: 0
-        castShadows: 0
-        receiveShadows: 0
+--- !u!4 &1087726720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087726718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 110.13099, y: 79.19803, z: 150.87328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209306847
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,95 +498,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1924859915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1924859917}
-  - component: {fileID: 1924859916}
-  m_Layer: 0
-  m_Name: LevelElements
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1924859916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924859915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3167981518a91ff47bc77387b1d0cd76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityModels:
-  - Name: New Entity
-    ComponentData:
-    - id: 0
-    - id: 1
-    SharedComponentData:
-    - id: 2
-  references:
-    version: 1
-    00000000:
-      type: {class: Translation, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          x: 0
-          y: 0
-          z: 0
-    00000001:
-      type: {class: LocalToWorld, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          c0:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c1:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c2:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c3:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-    00000002:
-      type: {class: RenderMesh, ns: Unity.Rendering, asm: Unity.Rendering.Hybrid}
-      data:
-        mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-        material: {fileID: 2100000, guid: 4edb7609c9032dc47a7a1a8e6763c29a, type: 2}
-        subMesh: 0
-        layer: 0
-        castShadows: 0
-        receiveShadows: 0
---- !u!4 &1924859917
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924859915}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
