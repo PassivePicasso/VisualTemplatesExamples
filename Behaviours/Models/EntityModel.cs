@@ -1,8 +1,6 @@
 ﻿using System;
 using Unity.Entities;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [Serializable]
 public struct EntityModel

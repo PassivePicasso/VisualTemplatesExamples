@@ -1,0 +1,56 @@
+.entity-name-field {
+    position: absolute;
+    top: -20px;
+    left: -16px;
+}
+
+.entity-name {
+    top: 1px;
+    position: absolute;
+    left: 4px;
+}
+
+.items-control-item {
+    margin-right: -1px;
+    margin-bottom: 1px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-right: 28px;
+    padding-left: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-top-color: rgba(0, 0, 0, 0.2);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.components-label {
+    font-size: 12px;
+    -unity-text-align: upper-center;
+    border-left-color: rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-top-color: rgba(0, 0, 0, 0.2);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-top: 2px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    margin-left: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-suggest #search-suggest-input {
+    width: auto;
+    height: auto;
+}

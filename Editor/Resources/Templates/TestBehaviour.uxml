@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="test-behaviour-inspector">
+        <Style src="ArchetypeManager.uss" />
+        <ui:Label text="Test Behaviour!" />
+        <ui:TextField binding-path="TestField" label="Test Field Bro:" />
+    </ui:VisualElement>
+    <uie:ToolbarPopupSearchField focusable="True"  >
+        <Style src="ArchetypeManager.uss" />
+    </uie:ToolbarPopupSearchField>
+    <uie:PropertyField binding-path="TextField">
+        <Style src="ArchetypeManager.uss" />
+    </uie:PropertyField>
+</ui:UXML>

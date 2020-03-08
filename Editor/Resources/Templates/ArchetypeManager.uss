@@ -1,95 +1,32 @@
-.template-error {
-    color: rgb(170, 0, 0);
-    border-width: 0 0 1 0;
-    border-color: rgb(34, 34, 34);
-    margin: 1;
-}
-
-
-.items-control-item {
-	padding-right: 25px;
-}
-
-.span {
+#items-control-item-delete {
     position: absolute;
-    left: 0;
-    right: 0;
+    top: 1px;
+    right: 1px;
 }
-
-.header {
-    padding-left: 4px;
-}
-
-.entity-model-data-components {
-    margin-bottom: 6px;
-}
-
-.entity-model-data-components * #unity-content {
-    margin-top: 2px;
-}
-
-.search-suggest {
-	flex-grow: 1;
-}
-
 
 #entity-models-control {
-	border-width: 1px;
-	border-color: #aaa;
-	background-color: #ddd;
-	margin-left: 15px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-#items-control-item-delete {
-	position: absolute;
-	right: 1px;
-	background-color: #822;
-	color: #fff;
-}
-#items-control-item-delete:hover {
-	background-color: #b33;
-	color: #fff;
-}
-#items-control-item-delete:active {
-	background-color: #F33;
-	color: #000;
-}
-
-#component-search-field {
-    flex-direction: row;
-}
-
-#component-search-label {
-    flex-grow: 0;
-    -unity-text-align: middle-left;
-}
-
-#entity-model-foldout Toggle * Label {
-    display: none;
-}
-
-#entity-model-name-field {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    position: absolute;
-}
-
-#entity-model-name-field Label {
-    -unity-font-style: bold;
-    margin-left: 4px;
-}
-
-#entity-model-foldout > Toggle {
-    top: 3px;
-    margin-left: -15px;
-}
-
-#entity-model-foldout {
-    min-height: 24px;
+.items-control-item {
     margin-left: 2px;
-}
-
-#entity-model-properties {
-    padding-bottom: 4px;
-    margin-top: 9px;
+    margin-right: 2px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0, 0, 0, 0.2);
+    border-top-color: rgba(0, 0, 0, 0.2);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }

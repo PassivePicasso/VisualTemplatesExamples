@@ -1,29 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:Foldout text="Foldout" name="entity-model-foldout" value="true" view-data-key="entity-model-element">
+    <ui:Label text="Name" binding-path="Name" class="entity-name">
         <Style src="EntityModel.uss" />
-        <ui:VisualElement name="entity-model-properties">
-            <ui:VisualElement name="data-components" class="entity-model-data-components">
-                <ui:Label text="Data Components" class="span header" />
-                <ui:Foldout text="Foldout" value="false" name="data-components-foldout" view-data-key="data-components-foldout">
-                    <VisualTemplates.ItemsControl binding-path="ComponentData" class="component-list" name="data-components-items-control" />
-                </ui:Foldout>
-            </ui:VisualElement>
-            <ui:VisualElement name="shared-data-components" class="entity-model-data-components">
-                <ui:Label text="Shared Data Components" class="span header" />
-                <ui:Foldout text="Foldout" value="false" name="shared-data-components-foldout" view-data-key="shared-data-components-foldout">
-                    <VisualTemplates.ItemsControl binding-path="SharedComponentData" class="component-list" name="shared-data-components-items-control" />
-                </ui:Foldout>
-            </ui:VisualElement>
-            <ui:VisualElement name="component-search-field">
-                <ui:Label text="Add Component" name="component-search-label" />
-                <VisualTemplates.SearchSuggest name="component-search">
-                    <VisualTemplates.TypeSuggestOptions types="Unity.Entities.IComponentData" include-descendants="true" />
-                    <VisualTemplates.TypeSuggestOptions types="Unity.Entities.ISharedComponentData" include-descendants="true" />
-                </VisualTemplates.SearchSuggest>
-            </ui:VisualElement>
-        </ui:VisualElement>
+    </ui:Label>
+    <ui:Foldout value="true" view-data-key="entity-item-entry" name="entity-item-foldout">
+        <Style src="EntityModel.uss" />
+        <ui:TextField binding-path="Name" name="entity-name-input" class="span entity-name-field" />
+        <ui:Label text="Data Components" name="data-components-label" class="header components-label" />
+        <VisualTemplates.ItemsControl binding-path="ComponentData" name="data-components-items-control" class="component-list" />
+        <ui:Label text="Shared Data Components" name="shared-data-components-label" class="header components-label" />
+        <VisualTemplates.ItemsControl binding-path="SharedComponentData" name="shared-data-components-items-control" class="component-list" />
+        <VisualTemplates.SearchSuggest name="component-search" tooltip="Component Search">
+            <VisualTemplates.TypeSuggestOptions types="Unity.Entities.IComponentData" include-descendants="true" />
+            <VisualTemplates.TypeSuggestOptions types="Unity.Entities.ISharedComponentData" include-descendants="true" />
+        </VisualTemplates.SearchSuggest>
     </ui:Foldout>
-    <ui:TextField label="Entity Model" binding-path="Name" name="entity-model-name-field" class="span">
-        <Style src="EntityModel.uss" />
-    </ui:TextField>
 </ui:UXML>
