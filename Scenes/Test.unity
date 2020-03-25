@@ -154,78 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityModels:
   - Name: Custom Entity
-    ComponentData:
-    - id: 0
-    - id: 0
-    - id: 1
-    - id: 0
-    SharedComponentData:
-    - id: 2
-    - id: 0
+    ComponentData: []
+    SharedComponentData: []
   - Name: New Entity
-    ComponentData:
-    - id: 0
-    - id: 3
-    SharedComponentData:
-    - id: 4
+    ComponentData: []
+    SharedComponentData: []
   references:
     version: 1
-    00000000:
-      type: {class: Translation, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          x: 12
-          y: 0
-          z: 0
-    00000001:
-      type: {class: Translation, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          x: 0
-          y: 0
-          z: 0
-    00000002:
-      type: {class: RenderMesh, ns: Unity.Rendering, asm: Unity.Rendering.Hybrid}
-      data:
-        mesh: {fileID: 0}
-        material: {fileID: 0}
-        subMesh: 0
-        layer: 0
-        castShadows: 0
-        receiveShadows: 0
-    00000003:
-      type: {class: LocalToWorld, ns: Unity.Transforms, asm: Unity.Transforms}
-      data:
-        Value:
-          c0:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c1:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c2:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-          c3:
-            x: 0
-            y: 0
-            z: 0
-            w: 0
-    00000004:
-      type: {class: RenderMesh, ns: Unity.Rendering, asm: Unity.Rendering.Hybrid}
-      data:
-        mesh: {fileID: 0}
-        material: {fileID: 0}
-        subMesh: 0
-        layer: 0
-        castShadows: 0
-        receiveShadows: 0
 --- !u!4 &140872661
 Transform:
   m_ObjectHideFlags: 0

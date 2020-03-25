@@ -4,10 +4,8 @@
         <ui:Label text="Test Behaviour!" />
         <ui:TextField binding-path="TestField" label="Test Field Bro:" />
     </ui:VisualElement>
-    <uie:ToolbarPopupSearchField focusable="True"  >
+    <VisualTemplates.SearchSuggest>
         <Style src="ArchetypeManager.uss" />
-    </uie:ToolbarPopupSearchField>
-    <uie:PropertyField binding-path="TextField">
-        <Style src="ArchetypeManager.uss" />
-    </uie:PropertyField>
+        <VisualTemplates.TypeSuggestOptions types="UnityEngine.MonoBehaviour" include-descendants="true" />
+    </VisualTemplates.SearchSuggest>
 </ui:UXML>

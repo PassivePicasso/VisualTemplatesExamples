@@ -28,7 +28,8 @@ public class ArchetypeManagerEditor : AutoEditor
     public override ContentPresenter CreateContentPresenter()
     {
         var presenter = base.CreateContentPresenter();
-        presenter.ConfigMethod = nameof(SetupArchetypeManager);
+        //presenter.ConfigMethod = nameof(SetupArchetypeManager);
+        presenter.Configure = SetupArchetypeManager;
         return presenter;
     }
 
@@ -78,7 +79,7 @@ public class ArchetypeManagerEditor : AutoEditor
     ///This is being called from \Editor\Resources\Templates\ArchetypeManager.uxml using the ItemsControl config-method attribute.
     ///Setting up this configuration callback isn't required for using ItemsControl as you can see when you start drilling down in the UXML template files under Editor\Resources
     /// </summary>
-    public void ConfigurerEntityModelItemsControl(VisualElement element)
+    public void ConfigurerEntityModelItem(VisualElement element)
     {
         var sharedDataComponentsItemsControl = element.Q<ItemsControl>("shared-data-components-items-control");
         var dataComponentsItemsControl = element.Q<ItemsControl>("data-components-items-control");
